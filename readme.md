@@ -1,5 +1,5 @@
 # My Calculator Program
-[![Build Status](https://app.travis-ci.com/mhafeez637/calc2.svg?branch=main)](https://app.travis-ci.com/mhafeez637/calc2)
+[![Build Status](https://app.travis-ci.com/mhafeez637/calc2.svg?branch=history)](https://app.travis-ci.com/mhafeez637/calc2)
 
 Run Pip Install pip install -r requirements.txt
 
