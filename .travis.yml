@@ -10,6 +10,8 @@ script:
 branches:
   only:
     - main
-    - -master
+    - master
     - history
     - development
+after_success:
+        - coveralls
