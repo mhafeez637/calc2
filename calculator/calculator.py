@@ -17,7 +17,7 @@ class Calculator:
         return Calculator.history[0].get_result()
 
     @staticmethod
-    def cl_hist():
+    def calc_history():
         """Clears history from calculator"""
         Calculator.history.clear()
         return True
@@ -39,7 +39,7 @@ class Calculator:
         return Calculator.history[-1].get_result()
 
     @staticmethod
-    def add_number(value_a, value_b):
+    def add_numbers(value_a, value_b):
         """Add two numbers"""
         # Addition object
         addition = Addition.create(value_a, value_b)
@@ -48,7 +48,7 @@ class Calculator:
 
     @staticmethod
     # Calling method
-    def subtract_number(value_a, value_b):
+    def subtract_numbers(value_a, value_b):
         """Subtract two numbers"""
         # Subtraction object
         subtraction = Subtraction.create(value_a, value_b)
