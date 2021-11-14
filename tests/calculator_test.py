@@ -22,7 +22,7 @@ def test_calculator_addition(calc_history):
     assert Calculator.history_count() == 3
     assert Calculator.get_last_cal_add_hist() == 14
 
-def test_cleary_history(calc_history):
+def test_clear_history(calc_history):
     """Testing Clear History with Add numbers"""
     assert Calculator.add_numbers(1,1) == 2
     assert Calculator.add_numbers(3, 5) == 8
