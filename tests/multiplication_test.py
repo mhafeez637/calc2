@@ -2,7 +2,7 @@
 from calc.calculations.multiplication import Multiplication
 
 
-def test_calculation_subtraction():
+def test_calculation_division():
     """multiplication testing using a static method"""
     # Arrange
     my_numbers = (2.0, 2.0)

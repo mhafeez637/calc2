@@ -2,10 +2,10 @@
 from calc.calculations.calculation import Calculation
 
 class Division(Calculation):
-    """Division object"""
+    """ calculation object"""
     def get_result(self):
         """get results"""
-        result = 1.0
+        division_value = 1.0
         for value in self.values:
-            result = result / value
-        return result
+            division_value = value / division_value
+        return division_value
