@@ -14,11 +14,6 @@ def test_calculator_add_static(clear_history_fixture):
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculator.add_numbers(1.0,1.0,1.0) == 3.0
 
-def test_calculator_subtract_static(clear_history_fixture):
-    """Subtracting numbers using a static method"""
-    # pylint: disable=unused-argument,redefined-outer-name
-    assert Calculator.subtract_numbers(3.0,2.0) == 1.0
-
 def test_calculator_multiply_static(clear_history_fixture):
     """Multiplying numbers using a static method"""
     # pylint: disable=unused-argument,redefined-outer-name

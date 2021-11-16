@@ -1,7 +1,6 @@
 """This is the increment function"""
 
 from calc.calculations.addition import Addition
-from calc.calculations.subtraction import Subtraction
 from calc.calculations.multiplication import Multiplication
 from calc.calculations.division import Division
 from calc.history.calculation import Calculations
@@ -16,13 +15,6 @@ class Calculator:
         calculation = Addition(args)
         Calculations.add_calculation(calculation)
         return calculation.get_result()
-
-    @staticmethod
-    def subtract_numbers(*args):
-        """ subtract numbers from result"""
-        calculation = Subtraction(args)
-        Calculations.add_calculation(calculation)
-        return calculation.get_result
 
     @staticmethod
     def multiply_numbers(*args):

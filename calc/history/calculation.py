@@ -1,5 +1,6 @@
 """Calculation history Class"""
 class Calculations:
+    """constructor class"""
     history = []
     # pylint: disable=too-few-public-methods
     @staticmethod
