@@ -1,11 +1,11 @@
-"""Multiplication Class"""
+"""Subtraction Class"""
 from calc.calculations.calculation import Calculation
 
-class Multiplication(Calculation):
-    """Multiplaction object"""
+class Subtraction(Calculation):
+    """ calculation object"""
     def get_result(self):
         """get results"""
-        total = 1.0
+        total = 0.0
         for value in self.values:
-            total = total * value
+            total = total - value
         return total

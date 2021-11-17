@@ -4,9 +4,9 @@ from calc.calculations.division import Division
 def test_calculation_multiplication():
     """Addition Testing using static method"""
     # Arrange
-    mynumbers = (1.0, 1.0)
+    xyz = (2.0, 4.0)
 
-    division = Division(mynumbers)
+    division = Division(xyz)
     # Act
     # Assert
-    assert division.get_result() == 1.0
+    assert division.get_result() == 2.0
