@@ -13,5 +13,6 @@ branches:
     - master
     - history
     - development
+    - Tuple
 after_success:
         - coveralls
