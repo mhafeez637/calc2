@@ -1,7 +1,8 @@
 # My Calculator Program
-[![Build Status](https://app.travis-ci.com/mhafeez637/calc2.svg?branch=Tuple)](https://app.travis-ci.com/mhafeez637/calc2)
 
 [![Coverage Status](https://coveralls.io/repos/github/mhafeez637/calc2/badge.svg?branch=Tuple)](https://coveralls.io/github/mhafeez637/calc2?branch=Tuple)
+
+[![Build Status](https://app.travis-ci.com/mhafeez637/calc2.svg?branch=Tuple)](https://app.travis-ci.com/mhafeez637/calc2)
 
 Run Pip Install pip install -r requirements.txt
 
