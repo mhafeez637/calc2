@@ -31,7 +31,7 @@ def calculator_sub_static(clear_history_fixture):
     assert Calculator.get_last_result_value() == -7.0
 
 def calculator_divide_static(clear_history_fixture):
-    """Divid numbers using a static method"""
+    """Divide numbers using a static method"""
     # pylint: disable=unused-argument,redefined-outer-name
     xyz_tuple = (2.0, 48.0)
     Calculator.divide_numbers(xyz_tuple)
