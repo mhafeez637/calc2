@@ -1,21 +1,16 @@
-import unittest
-
 from calculator.calculator import Calculator
-from CsvReader.CsvReader import CsvReader
+from calc.history.calculation import Calculations
 
-
-class MyTestCase(unittest.TestCase):
-    def setUp(self) -> None:
-        self.calculator = Calculator()
-
-    def test_results_property_calculator(self):
-        self.assertEqual(self.calculator.result, 0)
-
-    def test_add_method_calculator(self):
-        self.assertEqual(self.calculator.add(2, 2), 4)
-        self.assertEqual(self.calculator.result, 4)
-        test_data = CsvReader('Tests/Data/UnitTestAddition.csv').data
-        for row in test_data:
-            result = float(row['Result'])
-            self.assertEqual(self.calculator.add(row['Value 2'], row['Value 1']), result)
-            self.assertEqual(self.calculator.result, result)
+# Load the Pandas libraries with alias 'pd'
+import pandas as pd
+import pytest
+"""Testing the Calculator"""
+def test_add_static_calculator():
+    """Testing static method for addition"""
+    #Read csv file as external data load
+    data = pd.read_csv('tests/test_data/addition.csv')
+    # pylint: disable=unused-argument,redefined-outer-name
+    # using Tuple instead of args
+    tuple_value = data.value_1[0], data.value_2[0]
+    Calculator.add_numbers(tuple_value)
+    assert Calculator.get_last_result_value() == data.result[0]

@@ -7,7 +7,8 @@ def test_calculation_addition():
     # Arrange
     xyz = (3.0, 4.0)
 
-    addition = Addition(xyz)
     # Act
+    addition = Addition(xyz)
+
     # Assert
     assert addition.get_result() == 7.0
