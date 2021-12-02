@@ -3,4 +3,5 @@ pytest
 pycodestyle
 pytest-pylint
 coveralls
+openpyxl
 pandas

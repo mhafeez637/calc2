@@ -1,16 +1,30 @@
-from calculator.calculator import Calculator
-from calc.history.calculation import Calculations
-
-# Load the Pandas libraries with alias 'pd'
+"""CSV Addition Test"""
+import os
+import logging
 import pandas as pd
-import pytest
-"""Testing the Calculator"""
-def test_add_static_calculator():
-    """Testing static method for addition"""
-    #Read csv file as external data load
-    data = pd.read_csv('tests/test_data/addition.csv')
-    # pylint: disable=unused-argument,redefined-outer-name
-    # using Tuple instead of args
-    tuple_value = data.value_1[0], data.value_2[0]
-    Calculator.add_numbers(tuple_value)
-    assert Calculator.get_last_result_value() == data.result[0]
+import log.logs as log
+from calc.calculations.addition import Addition
+
+# Directory Path
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
+
+
+def test_calculation_addition():
+    # Arrange
+    filename = "test_data/addition.csv"
+    path = os.path.join(BASE_DIR, filename)
+    df = pd.read_csv(path)
+
+    print("Scan CSV Addition files in folder")
+    # Act
+    for x, row in df.iterrows():
+        xyz = (row.value_1, row.value_2)
+        addition = Addition.create(xyz)
+        addition_result = df["result"][x]
+        log.Write_data(filename, row.value_1, "+", row.value_2, addition_result)
+        logging.debug("Addition Result")
+
+    # Assert
+    assert addition.get_result() == addition_result
+
+    print("Addition CSV file and data has successfully verified")
