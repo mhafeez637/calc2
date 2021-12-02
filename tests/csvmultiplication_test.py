@@ -3,7 +3,7 @@
 import os
 import logging
 import pandas as pd
-import log.logs as log
+import main as log
 from calc.calculations.multiplication import Multiplication
 
 # Directory Path

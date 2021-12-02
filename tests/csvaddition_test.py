@@ -2,7 +2,7 @@
 import os
 import logging
 import pandas as pd
-import log.logs as log
+import main as log
 from calc.calculations.addition import Addition
 
 # Directory Path
