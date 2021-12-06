@@ -1,3 +1,4 @@
+"""log writer"""
 import logging
 
 # logging
@@ -15,8 +16,9 @@ logger.addHandler(fh)
 
 logging.info("log writer initiate")
 
-
 def output_data(filename, value_1, operation, value_2, result):
+    """Output file writing"""
+
     logger.debug(f'writing data to {filename}..')
     with open('file.log', 'a') as appendFile:
         appendFile.write(

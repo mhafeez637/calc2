@@ -1,28 +1,32 @@
 """CSV Division Test"""
+
 import os
-import pytest
 import logging
+import pytest
 import pandas as pd
-import main as log
+from tests import log
 from calc.calculations.division import Division
 
 # Directory Path
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
 
+# pylint: disable=unsubscriptable-object
 def test_calculation_division():
+    """ testing division csv file"""
+
     # Arrange
     filename = "test_data/division.csv"
     path = os.path.join(BASE_DIR, filename)
-    df = pd.read_csv(path)
+    data_frame = pd.read_csv(path)
 
     print("Scan CSV Division files in folder")
     # Act
-    for x, row in df.iterrows():
+    for index, row in data_frame.iterrows():
         xyz = (row.value_1, row.value_2)
         division = Division.create(xyz)
-        division_result = df["result"][x]
-        log.Write_data(filename, row.value_1, "+", row.value_2, division_result)
+        division_result = data_frame["result"][index]
+        log.output_data(filename, row.value_1, "+", row.value_2, division_result)
         logging.debug("Division Result")
     try:
         # Assert
