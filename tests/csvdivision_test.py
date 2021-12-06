@@ -26,7 +26,7 @@ def test_calculation_division():
         xyz = (row.value_1, row.value_2)
         division = Division.create(xyz)
         division_result = data_frame["result"][index]
-        log.output_data(filename, row.value_1, "+", row.value_2, division_result)
+        log.output_data(filename, row.value_1, "+", row.value_2, division_result, index)
         logging.debug("Division Result")
     try:
         # Assert

@@ -23,7 +23,7 @@ def test_calculation_addition():
         xyz = (row.value_1, row.value_2)
         addition = Addition.create(xyz)
         addition_result = data_frame["result"][index]
-        log.output_data(filename, row.value_1, "+", row.value_2, addition_result)
+        log.output_data(filename, row.value_1, "+", row.value_2, addition_result,index)
         logging.debug("Addition Result")
 
     # Assert

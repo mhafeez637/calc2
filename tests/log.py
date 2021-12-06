@@ -6,24 +6,25 @@ logger = logging.getLogger(__name__)
 
 logger.setLevel(logging.DEBUG)
 
-f = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', '%Y-%m-%d %H:%M:%S')
+formatter = logging.Formatter('%(recored_number)s %(asctime)s - %(levelname)s - %(message)s', '%Y-%m-%d %H:%M:%S')
 
-fh = logging.FileHandler('file.log')
+filehandling = logging.FileHandler('file.log')
 
-fh.setFormatter(f)
+filehandling.setFormatter(formatter)
 
-logger.addHandler(fh)
+logger.addHandler(filehandling)
 
 logging.info("log writer initiate")
 
 
-def output_data(filename, value_1, operation, value_2, result):
+def output_data(filename, value_1, operation, value_2, result, log_counter):
     """Output file writing"""
-
+    log_counter = log_counter + 1
     logger.debug(f'writing data to {filename}..')
-    with open('file.log', 'a') as appendFile:
-        appendFile.write(
-            f'Filename:{filename} - Value_1:{value_1}, '
-            f'Operation:{operation}, Value_2:{value_2} - Result:{result}\n')
-    return appendFile
+    with open('demo.log', 'a') as appendfile:
+        appendfile.write(f'Filename:{filename} -Record Number:{log_counter} - Value1:{value_1}, Operation:{operation}, '
+                         f'Value2:{value_2} - Result:{result}\n')
+    return appendfile
+
+
 logger.info(f"Log Writer process successfully completed")

@@ -24,7 +24,7 @@ def test_calculation_multiplication():
         xyz = (row.value_1, row.value_2)
         multiplication = Multiplication.create(xyz)
         multiplication_result = data_frame["result"][index]
-        log.output_data(filename, row.value_1, "+", row.value_2, multiplication_result)
+        log.output_data(filename, row.value_1, "+", row.value_2, multiplication_result, index)
         logging.debug("Multiplication Result")
 
     # Assert

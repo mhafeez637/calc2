@@ -24,7 +24,7 @@ def test_calculation_subtraction():
         xyz = (row.value_1, row.value_2)
         subtraction = Subtraction.create(xyz)
         subtraction_result = data_frame["result"][index]
-        log.output_data(filename, row.value_1, "+", row.value_2, subtraction_result)
+        log.output_data(filename, row.value_1, "+", row.value_2, subtraction_result, index)
         logging.debug("Subtraction Result")
 
     # Assert
