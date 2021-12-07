@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 
 logger.setLevel(logging.DEBUG)
 
-formatter = logging.Formatter('%(recored_number)s %(asctime)s - %(levelname)s - %(message)s', '%Y-%m-%d %H:%M:%S')
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', '%Y-%m-%d %H:%M:%S')
 
 filehandling = logging.FileHandler('file.log')
 
