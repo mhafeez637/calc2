@@ -2,7 +2,7 @@
 import os
 import logging
 import pandas as pd
-from tests import log
+import log
 from calc.calculations.subtraction import Subtraction
 
 # Directory Path

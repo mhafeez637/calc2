@@ -4,7 +4,7 @@ import os
 import logging
 import pytest
 import pandas as pd
-from tests import log
+import log
 from calc.calculations.division import Division
 
 # Directory Path
