@@ -27,7 +27,11 @@ def test_calculation_subtraction():
         log.output_data(filename, row.value_1, "+", row.value_2, subtraction_result, index)
         logging.debug("Subtraction Result")
 
+        data_frame.to_csv(r'tests/test_data_process/Subtraction_processed.csv', encoding='utf-8', index=True
+        )
+
     # Assert
     assert subtraction.get_result() == subtraction_result
 
     print("Subtraction CSV file and data has successfully verified")
+

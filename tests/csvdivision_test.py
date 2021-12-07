@@ -35,4 +35,6 @@ def test_calculation_division():
         with pytest.raises(ZeroDivisionError):
             assert division.get_result() is True
 
+        data_frame.to_csv(r'tests/test_data_process/division_processed.csv', encoding='utf-8', index=True)
+
     print("Division CSV file and data has successfully verified")

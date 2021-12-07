@@ -27,6 +27,8 @@ def test_calculation_multiplication():
         log.output_data(filename, row.value_1, "+", row.value_2, multiplication_result, index)
         logging.debug("Multiplication Result")
 
+    data_frame.to_csv(r'tests/test_data_process/Multiplication_processed.csv', encoding='utf-8', index=True)
+
     # Assert
     assert multiplication.get_result() == multiplication_result
 

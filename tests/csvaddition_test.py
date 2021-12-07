@@ -17,6 +17,7 @@ def test_calculation_addition():
     path = os.path.join(BASE_DIR, filename)
     data_frame = pd.read_csv(path)
 
+
     print("Scan CSV Addition files in folder")
     # Act
     for index, row in data_frame.iterrows():
@@ -26,7 +27,11 @@ def test_calculation_addition():
         log.output_data(filename, row.value_1, "+", row.value_2, addition_result, index)
         logging.debug("Addition Result")
 
-    # Assert
+        data_frame.to_csv(r'tests/test_data_process/addition_processed.csv', encoding='utf-8', index=True)
+
+
+
+        # Assert
     assert addition.get_result() == addition_result
 
     print("Addition CSV file and data has successfully verified")
