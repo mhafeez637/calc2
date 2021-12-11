@@ -14,3 +14,7 @@ pytest --pylint --cov
 
 Flash Message
 ![img_4.png](img_4.png)
+
+Missing Value2 and raised flash message
+
+![img_5.png](img_5.png)
