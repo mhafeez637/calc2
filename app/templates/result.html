@@ -2,47 +2,69 @@
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
-    <style type="text/css">
-        .important {
-            color: #336699;
-        }
+      <style>
+          .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+              margin-bottom: 0;
+            width: 400px;
+              height: 80px;
+            }
     </style>
 {% endblock %}
 {% block content %}
-    <h1>Calculation Result</h1>
+    <h1>Calculator Result</h1>
     {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-success" role="alert">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-    <strong>Value 1: </strong> {{ value1 }} <br>
-    <strong>Value 2: </strong> {{ value2 }} <br>
-    <strong>Operation: </strong> {{ operation }} <br>
-    <strong>Result: </strong> {{ result }}
+	  {% if messages %}
+	    {% for message in messages %}
+		  <div class="alert alert-success alert-dismissible" role="alert">
+			{{message}}
+		  </div>
+		{% endfor %}
+	  {% endif %}
+	{% endwith %}
 
-    {% if data %}
-        <table>
-            {% for item in data %}
-                <!--- This will not work you have to think about it--->
-                <TR>
-                    <TD class="c1"><IMG src="favicon.ico"></TD>
-                    <TD class="c2">{{ item.date }}</TD>
-                    <TD class="c3">{{ item.id }}</TD>
-                    <TD class="c4"><SPAN>{{ item.position }}</SPAN></TD>
-                    <TD class="c5"><SPAN>{{ item.status }}</SPAN></TD>
-                </TR>
-            {% endfor %}
-        </table>
-    {% else %}
-        <h1>There are no calculations</h1>
-    {% endif %}
+     {#<div class="container px-4 px-lg-5">#}
+    <table id="data" class="table table-striped">
 
+    <thead>
+        <tr>
+            <th>Value 1</th>
+            <th>Value 2</th>
+            <th>Operation</th>
+            <th>result</th>
+        </tr>
+        </thead>
+    <tbody>
+    {% for eachstocks in data%}
+        <tr>
+          <td>{{ eachstocks[0] }}</td>
+          <td>{{ eachstocks[1] }}</td>
+          <td>{{ eachstocks[2] }}</td>
+          <td>{{ eachstocks[3] }}</td>
+        </tr>
 
 
+     {% endfor %}
+    </tbody>
+    </table>
+        {#</div>#}
+{% endblock %}
 
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        columns:
+            [
+                {searchable: false},
+                {searchable: false},
+                null,
+                null
+            ],
+      });
+    });
+  </script>
 
 {% endblock %}
