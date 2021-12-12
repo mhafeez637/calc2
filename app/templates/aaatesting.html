@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
+{% endblock %}
+{% block content %}
+        <div class="bg-image p-2 text-center shadow-1-strong rounded mb-2">
+            <h1 class="mb-3 h2">ARRANGE-ACT-ASSERT (AAA)</h1>
+        </div>
+        <h3>AAA Testing</h3>
+        <div class="row">
+            <div>
+                <p> When writing tests, there are always three words we need to remember. <b>Arrange, act and
+                    assert!</b> These three words can be used as a mnemonic of how a test should be structured. </p>
+                <p> Unit tests are a way to make sure our code is correct. Python comes with a built-in unit test
+                    framework that makes it easy to write a lot of tests for our software. Most of the programmers start
+                    writing test scripts while they start development. write a series of tests before they begin coding.
+                    This approach is called “test driven development” and is very effective. </p>
+                <p> Testing provides an empirical feedback loop for development. That’s how testing keeps us safe. With
+                    tests, we know when things break. Without tests, coding can be dangerous </p>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="560" height="315"
+                                src="//youtube.com/embed/1Lfv5tUGsn8" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p> The AAA (Arrange, Act, Assert) pattern is a standard way of writing tests for a subject under test.
+                    We can also find these rules written as "given, when, then" .
+                <ul>
+                    <li>The arrange section of a test method initializes the subject under test and sets the value of
+                        the data that is passed as input.
+                    </li>
+                    <li>The Act section invokes the subject under test with the arranged parameter.</li>
+                    <li>The Assert section verifies that the action of the subject under test behaves as expected.</li>
+                </ul>
+                <img width=734 height=346 src="images/AAA.jpg" alt="index"/>
+                <p> When want to isolate part a of the application so that we can test it. This means we don't want to
+                    have to worry about the complexity of what's happening in the rest of the system, we only want to
+                    focus on the things we want to test in the current tests we're writing. So essentially we're using
+                    mocking to isolate the things we want to test from the rest of the application. If we want to test a
+                    part of the application and avoid other sections that are dependent on this module. We mock the
+                    other sections. We create mock sections of the parts that are not needed to test and set mock input
+                    and return values. </p>
+                <p> Arrange-Act-Assert is powerful because it is simple. It forces tests to focus on independent,
+                    individual behaviors. It separates setup actions from the main actions. It requires test to make
+                    verifications and not merely run through motions. Notice how the pattern is not
+                    Arrange-Act-Assert-Act-Assert – subsequent actions and assertions belong in separate tests!
+                    Arrange-Act-Assert is a great pattern to follow for writing good functional tests. </p>
+                <h3>External Data for Testing</h3>
+                <p>It is a good idea to separate the test data from the code and put it in an external source for easy
+                    maintenance and avoid changes to the test code each time we want to update the values.</p>
+                <p> We can read the test data from the Comma separated values (CSV) files or Excel spreadsheets, but
+                    most commonly we do use CSV file as external test data source.</p>
+                <p>CSV (comma-separated value) files are a common file format for transferring and storing data. The
+                    ability to read, manipulate, and write data to and from CSV files using Python is a key skill to
+                    master for any data scientist or business analysis. In this post, we’ll go over what CSV files are,
+                    how to read CSV files into Pandas DataFrames, and how to write DataFrames back to CSV files post
+                    analysis.</p>
+                <img width=700 height=593 src="images/pandas.jpg" alt="index"/>
+                <p> The basic process of loading data from a CSV file into a Pandas DataFrame is achieved using the
+                    “read_csv” function in Pandas: </p>
+                <p>So as we do this, what are we even testing? What are we achieving? </p>
+                <p> We can see the contents of the file that gets opened directly in the test. This makes it much easier
+                    for us to understand why the test is passing or failing. </p>
+                <p> We trust that our code works properly. Our unit test does not need to test it. However, typo error
+                    and other factor does impact on code. We have to test and make sure every side of code is
+                    working. </p>
+            </div>
+        </div>
+{% endblock %}

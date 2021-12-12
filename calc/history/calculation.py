@@ -9,6 +9,12 @@ class Calculations:
     """History Aray"""
     history = []
 
+    @staticmethod
+    def readHistoryFromCSV():
+        """Read the history from csv and put it into the history """
+    @staticmethod
+    def writeHistoryToCSV():
+        """Write the history to csv file"""
     # pylint: disable=too-few-public-methods
     @staticmethod
     def clear_history():

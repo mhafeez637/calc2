@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="bg-image p-2 text-center shadow-1-strong rounded mb-2">
+    <h1 class="mb-3 h2">Pylint, Glossary of OOP Terms</h1>
+</div>
+<h3>Python Coding, Debugging and Testing</h3>
+<div class="row">
+    <div class="col-9">
+        <p> If we’re coding in Java the compiler will usually lend a helping hand. But if we’re coding in a
+            dynamic language like Python we’re on our own: we don’t have a compiler to catch bugs. </p>
+        <p>
+            <b>Pylint</b> is a tool that checks for errors in Python code, tries to enforce a coding standard
+            and looks for code smells. It can also look for certain type errors, it can recommend suggestions
+            about how particular blocks can be refactored and can offer you details about the code's complexity.
+        </p>
+        <img width=500 height=250 src="images/pylint_error2.jpg" alt="index"/>
+        <p> Pylint has a lot of useful errors and warnings. but also a whole lot of highly opinionated
+            assumptions about how our code should look. And fundamentally it treats both opinions and objective
+            problems the same way. There’s a distinction between warnings and errors, but both useful and
+            useless stuff is in the warning category. </p>
+        <h3>Installation</h3>
+        <p> Pylint easily installable using pip command. </p>
+        <p>
+            <mark>
+                <b>pip install pylint</b>
+            </mark>
+        </p>
+        <h5>Source distribution installation</h5>
+        <p> From the source distribution, extract the tarball, go to the extracted directory and simply run </p>
+        <p>
+            <mark>
+                <b>python setup.py install</b>
+            </mark>
+        </p>
+        <p> Or you can install it in editable mode, using </p>
+        <p>
+            <mark>
+                <b>python setup.py develop</b>
+            </mark>
+        </p>
+        <div class="modal-body">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" width="560" height="315"
+                        src="//www.youtube.com/embed/fFY5103p5-c" allowfullscreen></iframe>
+            </div>
+        </div>
+        <p> So here we have a tool that is potentially useful, but unused in practice. What to do? </p>
+        <p> Luckily Pylint has some functionality that can help: you can configure it to only enable a limited
+            list of lint checks. </p>
+        <p> First, setup Pylint to do nothing: </p>
+        <ol>
+            <li>Generate an initial .pylintrc, for example by using pylint --generate-rcfile.</li>
+            <li>Make a list of all the features you plausibly want to enable from the Pylint docs and configure
+                .pylintrc to enable them.
+            </li>
+            <li> Comment them all out.</li>
+            <Li>At this point Pylint will do no checks. Next:</Li>
+            <li>Uncomment a small batch of checks, and run pylint.</li>
+        </ol>
+        <img width=500 height=250 src="images/pylint_error.jpg" alt="index"/>
+        <p> If the resulting errors are real problems, fix them. If the errors are utter garbage, delete those
+            checks from the configuration. </p>
+        <p> After fixing first error message</p>
+        <img width=500 height=250 src="images/pylint_error1.jpg" alt="index"/>
+        <p> We do see another error message "Final newline missing (missing-final-newline)". This error message
+            clearly pointing that we have a missing line at the end. Let correct this and see how pylint results
+            us back.</p>
+        <img width=500 height=250 src="images/pylint100per.jpg" alt="index"/>
+        <p> Above example clearly showed us that Pylint has a lot of useful errors and warnings. but also a
+            whole lot of highly opinionated assumptions about how your code should look. </p>
+        <p></p>
+        <h3 class="red">Python Objects and Classes</h3>
+        <p> Python is a multi-paradigm programming language. It supports different programming approaches. One
+            of the popular approaches to solve a programming problem is by creating objects. This is known as
+            Object-Oriented Programming (OOP). </p>
+        <h4>OOP terms with definitions:</h4>
+        <p></p>
+        <p>
+            <b>Instantiation</b> - we can create many objects from a class. An object is also called an instance
+            of a class and the process of creating this object is called instantiation.
+        </p>
+        <p>
+            <b>Factory</b> - Factory Method is a Creational Design Pattern that allows an interface or a class
+            to create an object, but lets subclasses decide which class or object to instantiate.
+        </p>
+        <p>
+            <b>Object</b> − A unique instance of a data structure that's defined by its class. An object
+            comprises both data members (class variables and instance variables) and methods.
+        </p>
+        <p>
+            <b>Class</b> − A user-defined prototype for an object that defines a set of attributes that
+            characterize any object of the class. The attributes are data members (class variables and instance
+            variables) and methods, accessed via dot notation.
+        </p>
+        <p>
+            <b>Namespace</b> - A namespace is a system that has a unique name for each and every object in
+            Python. An object might be a variable or a method. Python itself maintains a namespace in the form
+            of a Python dictionary.
+        </p>
+        <p>
+            <b>Constructor</b> - Code that is executed each time an instance of the class is created.
+        </p>
+        <p>
+            <b>Fixture</b> - The purpose of a test fixture is to ensure that there is a well known and fixed
+            environment in which tests are run so that results are repeatable.
+        </p>
+        <p>
+            <b>Type Hint</b> - Type hinting means providing hints to function to only accept the given data
+            type. In technical word we can say that Type Hinting is method by which we can force function to
+            accept the desired data type.
+        </p>
+        <p>
+            <b>Type Cast</b> - The process of converting the value of one data type (integer, string, float,
+            etc.) to another data type is called type conversion or also called type cast.
+        </p>
+        <p>
+            <b>Unit Test</b> - A unit test is a way of testing a unit - the smallest piece of code that can be
+            logically isolated in a system.
+        </p>
+        <p>
+            <b>Static</b> - In object-oriented programming, there is also the concept of a static member
+            variable, which is a "class variable" of a statically defined class, i.e., a member variable of a
+            given class which is shared across all instances (objects), and is accessible as a member variable
+            of these objects.
+        </p>
+        <p>
+            <b>Class Method</b> - The code describing a particular entity in the application, such as Customer,
+            Order, or Address. The class contains the code defining the properties and methods.
+        </p>
+        <p>
+            <b>Facade</b> - Facade is a structural design pattern that provides a simplified interface to a
+            library, a framework, or any other complex set of classes.
+        </p>
+        <p>
+            <b>Design patterns</b> - Design patterns provide a standard terminology and are specific to
+            particular scenario.
+        </p>
+        <p>
+            <b>Method</b> - The code defining the actions or behaviors of the class, such as Validate or
+            CalculateTotal.
+        </p>
+        <p>
+            <b>Property</b> - The code defining the data managed by the class, such as CustomerName,
+            OrderNumber, or EmailAddress.
+        </p>
+        <p>
+            <b>Constructor</b> - Code that is executed each time an instance of the class is created.
+        </p>
+    </div>
+    <div class="col-3">
+        <p>
+            <b>Debuging Code</b>
+        </p>
+        <p>PyCharm supports pytest, providing many testing features such as: </p>
+        <ul>
+            <li> Dedicated test runner.</li>
+            <li>Code completion for test subject.</li>
+            <li>Code navigation.</li>
+            <li>Detailed failing assert reports.</li>
+            <li>Multiprocessing test execution.</li>
+        </ul>
+        <p>
+            <b>Parametrization</b>
+        </p>
+        <p>The Pytest framework makes it easy to write tests to support multiple and complex functional testing
+            for applications and libraries. Pytest enables test parametrization at several levels, such as:</p>
+        <ul>
+            <li>@pytest.fixture provide a fixed baseline (e.g. an instance of a class) upon which tests can
+                reliably and repeatedly execute. Moreover, via scope controls it is possible to check how often
+                a fixture gets called.
+            </li>
+            <li> @pytest.mark.parametrize allows the definition of multiple sets of arguments and fixtures for
+                testing purpose.
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

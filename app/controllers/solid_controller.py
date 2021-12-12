@@ -1,7 +1,7 @@
 from app.controllers.controller import ControllerBase
 from flask import render_template
 
-class IndexController(ControllerBase):
+class SolidController(ControllerBase):
     @staticmethod
     def get():
-        return render_template('index.html')
+        return render_template('solid.html')

@@ -1,17 +1,57 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock %}
 {% block head %}
-{{ super() }}
-<style type="text/css">
-    .important {
-        color: #336699;
-    }
-</style>
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
 {% endblock %}
 {% block content %}
-<h1>Index I should see this change with a page refresh</h1>
-<p class="important">
-    Welcome to my awesome homepage.
-    <img src="{{ url_for('static', filename='images/sample.jpeg') }}">
-</p>
+<div class="container">
+    <div class="grw-font">
+        </div>
+        <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-balck"
+             >
+            <h1 class="mb-3 h2">Programming and Testing </h1>
+        </div>
+        <h3>Software Development & Testing Cycle</h3>
+        <div class="row">
+            <div class="col-9">
+                <p> Software development provides a series of steps for programmers to create computer programs. This
+                    process makes up the phases in the software development life cycle. </p>
+                <p> We will discuss, what are the best practices for testing, code quality, and object-oriented
+                    programming. </p>
+                <p> Software development is the process of conceiving, specifying, designing, programming, documenting,
+                    testing, and bug fixing involved in creating and maintaining applications, frameworks, or other
+                    software components. </p>
+                <p> The perception regarding programmers, that they spend their entire working day writing code, and
+                    little much else. But in reality coding is a fraction of our job. </p>
+                <p> Building software is not the end. Every new software has to go through software development Life
+                    cycle. </p>
+                <p> Every software must be tested based on requirments. it must be tested to make sure that there aren’t
+                    any bugs and that the end-user experience will not negatively be affected at any point. During the
+                    testing stage, developers will go over their software with a fine-tooth comb, noting any bugs or
+                    defects that need to be tracked, fixed, and later retested. t’s important that the software overall
+                    ends up meeting the quality standards. Depending on the skill of the developers, the complexity of
+                    the software, and the requirements for the end-user, testing can either be an extremely short phase
+                    or take a very long time. </p>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="560" height="315"
+                                src="//www.youtube.com/embed/PhzYlopDCX0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <h4>Prescient Quotes</h4>
+                <p class="align-content-between"> “Trust, but verify” is commonly used with reference to security, but
+                    it is prefect fit in software development. Trust your code and verify with unit testing. </p>
+                <p> “More than the act of testing, the act of designing tests is one of the best bug preventers known.
+                    The thinking that must be done to create a useful test can discover and eliminate bugs before they
+                    are coded – indeed, test-design thinking can discover and eliminate bugs at every stage in the
+                    creation of software, from conception to specification, to design, coding and the rest.” – Boris
+                    Beizer </p>
+            </div>
+        </div>
+</div>
 {% endblock %}

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="bg-image p-2 text-center shadow-1-strong rounded mb-2">
+    <h1 class="mb-3 h2">SOLID Object Oriented Design</h1>
+</div>
+<h3>SOLID Object Oriented Design</h3>
+<div class="row">
+    <div>
+        <p> These principles establish practices that lend to developing software with considerations for
+            maintaining and extending as the project grows. Adopting these practices can also contribute to
+            avoiding code smells, refactoring code, and Agile or Adaptive software development.
+        </p>
+        <p>SOLID stands for:
+        </p>
+        <ul>
+            <li><b>S</b> - Single-responsiblity Principle
+            </li>
+            <li><b>O</b> - Open-closed Principle
+            </li>
+            <li>
+
+                <b>L</b> - Liskov Substitution Principle
+            </li>
+            <li>
+                <b>I</b> - Interface Segregation Principle
+            </li>
+            <li>
+                <b>D</b> - Dependency Inversion Principle
+            </li>
+        </ul>
+        <h4>Single-Responsibility Principle</h4>
+        <p>Single-responsibility Principle (SRP) states:</p>
+
+        <p> class should have one and only one reason to change, meaning that a class should have only one
+            job.</p>
+
+        <p>In the Calculator example, We have to apply different operators like addition, subtraction, multiply
+            and division.
+        </p>
+        <p> First, create the Addition classes and have the constructors set up the required parameters.
+        </p>
+        <img width=500 height=300 src="images/addition.jpg" alt="index"/>
+        <p>Next, create the Calculations class and then write up the logic to sum up the numbers.</p>
+        <img width=500 height=300 src="images/calculation.jpg" alt="index"/>
+
+        <h4>Open-Closed Principle</h4>
+        <p>Open-closed Principle (OCP) states:</p>
+
+        <p> Objects or entities should be open for extension but closed for modification.
+        </p>
+        This means that a class should be extendable without modifying the class itself.
+        <p>
+            Calculations class we can extend and add other object like multiply and division or history to
+            extend it. We can without modifying exiting parent classes we can extend calculator and introduce
+            new operator.
+        </p>
+
+        <img width=500 height=300 src="images/calculationext.jpg" alt="index"/>
+        <h4>Liskov Substitution Principle</h4>
+        <p>This means that every subclass or derived class should be substitutable for their base or parent
+            class.</p>
+        <p>
+            We have coded every class separately and used the hierarchy method WHich helped us to extend the
+            calculator without causing any negative impact on existing code
+        </p>
+        <img width=500 height=300 src="images/hierarchy.jpg" alt="index"/>
+        <h4>Interface Segregation Principle</h4>
+        <p>Make fine grained interfaces that are client specific Clients should not be forced to depend upon
+            interfaces that they do not use. This principle deals with the disadvantages of implementing big
+            interfaces.
+        </p>
+        <p>In Calculator single class we have implemented several interfaces. So we can provide a single
+            implementation for all the common methods between the interfaces. The segregated interfaces will
+            also force us to think of our code more from the client’s point of view, which will in turn lead to
+            loose coupling and easy testing. So, not only have we made our code better to our clients, we also
+            made it easier for ourselves to understand, test and implement.</p>
+        <img width=500 height=300 src="images/calculator.jpg" alt="index"/>
+        <h4>Dependency Inversion Principle</h4>
+        <p>Entities must depend on abstractions, not on concretions. It states that the high-level module must
+            not depend on the low-level module, but they should depend on abstractions.</p>
+        <p>Calculation class is dependent on low level class. If we are looking to add another function to out
+            calculator then we have to introduce another object or update existing object.</p>
+    </div>
+</div>
+{% endblock %}
