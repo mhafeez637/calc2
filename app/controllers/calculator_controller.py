@@ -1,19 +1,16 @@
-""" This is the calculator controller class"""
-from flask import render_template, request, flash, redirect, url_for, session
 from app.controllers.controller import ControllerBase
 from calculator.calculator import Calculator
+from flask import render_template, request, flash, redirect, url_for, session
 
 
 class CalculatorController(ControllerBase):
-    """This class controls the operation of the calculator"""
     @staticmethod
     def post():
-        """This method deals with the validation of operations"""
         if request.form['value1'] == '' or request.form['value2'] == '':
-            error = 'You must enter a valid entry for value 1 and or value 2'
+            error = 'You must enter a value for value 1 and or value 2'
         else:
             Calculator.getHistoryFromCSV()
-            flash('Calculation has done. What Next')
+            flash('You successfully calculated')
             # get the values out of the form
             value1 = request.form['value1']
             value2 = request.form['value2']
@@ -30,11 +27,29 @@ class CalculatorController(ControllerBase):
                 'operation': [operation]
             }
             Calculator.writeHistoryToCSV()
-            return render_template('result.html', data=Calculator.getHistory(),
-                                   value1=value1, value2=value2, operation=operation, result=result)
+            return render_template('result.html', data=Calculator.getHistory(), value1=value1, value2=value2,
+                                   operation=operation, result=result)
         return render_template('calculator.html', error=error)
 
     @staticmethod
     def get():
-        """ This method returns the template back to calculator controller class"""
         return render_template('calculator.html')
+
+    """
+    The easy calculator solution
+    1.  fix your calculator to read and write calculations to the csv
+    2.  fix the controller to read the the csv to history first
+    3.  Fix the controller to write the history to csv after you add the calculation to history
+    4.  Make a method on the calculator to return the history in the format you want to print in the template
+
+    Optional
+       Fix it so that you store the type of calculation and perform the calulation at runtime, 
+       so you don't store the raw result
+
+       IF you want to be fancy you can change the delimeter for the file to semicolon and write your tuple of value to the file
+
+       Values, Operation
+       1,2,3,4; Addition
+       1,2,3,4; Addition
+
+    """
