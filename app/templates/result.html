@@ -2,47 +2,46 @@
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
-{#    <style type="text/css">#}
-{#        .important { color: #336699; }#}
-{#    </style>#}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
 {% endblock %}
 {% block content %}
+    <h1>Calculation Result</h1>
     {% with messages = get_flashed_messages() %}
-	  {% if messages %}
-	    {% for message in messages %}
-		  <div class="alert alert-success alert-dismissible" role="alert">
-		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true" class="closebtn">&times;</span>
-          </button>
-			{{message}}
-		  </div>
-		{% endfor %}
-	  {% endif %}
-	{% endwith %}
-    <h1>Result Table</h1>
-      <table id="data" class="table table-striped">
-    <thead>
-      <tr>
-        <th>Value 1</th>
-        <th>Value 2</th>
-        <th>Operation</th>
-        <th>Result</th>
-      </tr>
-    </thead>
-    <tbody>
-{#      {% for user in users %}#}
-        <tr>
-          <td>{{ value1 }}</td>
-          <td>{{ value2 }}</td>
-          <td>{{ operation }}</td>
-          <td>{{ result }}</td>
-        </tr>
-{#      {% endfor %}#}
-    </tbody>
-  </table>
-{#    <strong>Value 1: </strong> {{ value1 }} <br>#}
-{#    <strong>Value 2: </strong> {{ value2 }} <br>#}
-{#    <strong>Operation: </strong> {{ operation }} <br>#}
-{#    <strong>Result: </strong> {{ result }}#}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <strong>Value 1: </strong> {{ value1 }} <br>
+    <strong>Value 2: </strong> {{ value2 }} <br>
+    <strong>Operation: </strong> {{ operation }} <br>
+    <strong>Result: </strong> {{ result }}
+
+    {% if data %}
+        <table>
+            {% for item in data %}
+                <!--- This will not work you have to think about it--->
+                <TR>
+                   <TD class="c2">{{ item.value1 }}</TD>
+                    <TD class="c3">{{ item.value2 }}</TD>
+                    <TD class="c4"><SPAN>{{ item.operation }}</SPAN></TD>
+                    <TD class="c5"><SPAN>{{ item.result }}</SPAN></TD>
+                </TR>
+            {% endfor %}
+        </table>
+        {% else %}
+	        <h1>There are no calculations</h1>
+    {% endif %}
+
+
+
+
 
 {% endblock %}
