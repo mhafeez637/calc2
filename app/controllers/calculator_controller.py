@@ -1,6 +1,3 @@
-import os
-
-import pandas as pd
 from app.controllers.controller import ControllerBase
 from csvmanager.read import Read
 from csvmanager.write import Write
