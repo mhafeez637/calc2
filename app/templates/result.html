@@ -37,12 +37,12 @@
         </tr>
         </thead>
     <tbody>
-    {% for eachstocks in data%}
+    {% for data in data%}
         <tr>
-          <td>{{ eachstocks[0] }}</td>
-          <td>{{ eachstocks[1] }}</td>
-          <td>{{ eachstocks[2] }}</td>
-          <td>{{ eachstocks[3] }}</td>
+          <td>{{ data[1] }}</td>
+          <td>{{ data[2] }}</td>
+          <td>{{ data[3] }}</td>
+          <td>{{ data[4] }}</td>
         </tr>
 
 
@@ -58,11 +58,11 @@
       $('#data').DataTable({
         columns:
             [
-                {searchable: false},
-                {searchable: false},
-                null,
-                null
-            ],
+                {searchable: true},
+                {searchable: true},
+                {searchable: true},
+                {searchable: true},
+                ],
       });
     });
   </script>

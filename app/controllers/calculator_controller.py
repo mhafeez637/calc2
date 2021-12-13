@@ -2,6 +2,8 @@ import os
 
 import pandas as pd
 from app.controllers.controller import ControllerBase
+from csvmanager.read import Read
+from csvmanager.write import Write
 from calculator.calculator import Calculator
 from flask import render_template, request, flash, redirect, url_for
 
@@ -20,26 +22,18 @@ class CalculatorController(ControllerBase):
             value2 = request.form['value2']
             operation = request.form['operation']
             # make the tuple
-            inputvalues = ({'Value 1': value1, 'Value 2': value2, 'Operation': operation})
-
             my_tuple = (value1, value2)
-
             # this will call the correct operation
             getattr(Calculator, operation)(my_tuple)
-
             result = str(Calculator.get_last_result_value())
 
             # Calling the class to write the user input to csv
-            df = pd.DataFrame([inputvalues])
-            df.to_csv('csvfiles/inputvalues.csv', mode='a', header=not os.path.exists('csvfiles/inputvalues.csv'))
+            inputvalues = ({'Value 1': value1, 'Value 2': value2, 'Operation': operation, 'Result': result})
+            Write.DataFrameToCSVFile(inputvalues)
 
-            df = pd.read_csv('csvfiles/inputvalues.csv')
+        df_read = Read.DataFrameFromCSVFile()
 
-
-            return render_template('result.html', data=df.values)
-
-
-
+        return render_template('result.html', data=df_read.values)
 
     @staticmethod
     def get():

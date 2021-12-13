@@ -13,6 +13,7 @@ class Calculator:
         # This to have more than one action per function
         return Calculations.get_last_calculation_result_value()
 
+
     @staticmethod
     # Using Tuple
     def add_numbers(tuple_values: tuple):
