@@ -29,6 +29,7 @@ class CalculatorController(ControllerBase):
 
             # Calling the class to write the user input to csv
             inputvalues = ({'Value 1': value1, 'Value 2': value2, 'Operation': operation, 'Result': result})
+
             Write.DataFrameToCSVFile(inputvalues)
 
         df_read = Read.DataFrameFromCSVFile()
