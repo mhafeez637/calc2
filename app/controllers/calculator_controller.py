@@ -31,7 +31,9 @@ class CalculatorController(ControllerBase):
 
         df_read = Read.DataFrameFromCSVFile()
 
-        return render_template('result.html', data=df_read.values)
+        return render_template('result.html', data=df_read.values, value11=value1, value12=value2, operation1=operation, result1=result)
+
+    # return render_template('result.html', value1=value1, value2=value2, operation=operation, result=result)
 
     @staticmethod
     def get():

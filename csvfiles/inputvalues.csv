@@ -1,6 +1,19 @@
 ,Value 1,Value 2,Operation,Result
 0,1,2,add_numbers,3.0
+0,1,2,add_numbers,3.0
+0,1,2,add_numbers,3.0
 0,1,2,divide_numbers,0.5
 0,1,2,add_numbers,3.0
+0,1,2,add_numbers,3.0
+0,10,20,add_numbers,30.0
+0,0,2,divide_numbers,0.0
 0,1,0,divide_numbers,ZeroDivisionError
-0,4,2,divide_numbers,2.0
+0,1,0,divide_numbers,ZeroDivisionError
+0,1,0,divide_numbers,ZeroDivisionError
+0,1,0,divide_numbers,ZeroDivisionError
+0,1,0,divide_numbers,ZeroDivisionError
+0,1,0,divide_numbers,ZeroDivisionError
+0,1,0,divide_numbers,ZeroDivisionError
+0,1,2,add_numbers,3.0
+0,1,2,add_numbers,3.0
+0,1,2,add_numbers,3.0
