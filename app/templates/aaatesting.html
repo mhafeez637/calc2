@@ -38,7 +38,7 @@
                     <li>The Act section invokes the subject under test with the arranged parameter.</li>
                     <li>The Assert section verifies that the action of the subject under test behaves as expected.</li>
                 </ul>
-                <img width=734 height=346 src="images/AAA.jpg" alt="index"/>
+                    <img src="{{ url_for('static', filename='images/AAA.jpg') }}" width="734" height="346"/>
                 <p> When want to isolate part a of the application so that we can test it. This means we don't want to
                     have to worry about the complexity of what's happening in the rest of the system, we only want to
                     focus on the things we want to test in the current tests we're writing. So essentially we're using
@@ -61,7 +61,8 @@
                     master for any data scientist or business analysis. In this post, we’ll go over what CSV files are,
                     how to read CSV files into Pandas DataFrames, and how to write DataFrames back to CSV files post
                     analysis.</p>
-                <img width=700 height=593 src="images/pandas.jpg" alt="index"/>
+                    <img src="{{ url_for('static', filename='images/pandas.jpg') }}" width="700" height="593"/>
+
                 <p> The basic process of loading data from a CSV file into a Pandas DataFrame is achieved using the
                     “read_csv” function in Pandas: </p>
                 <p>So as we do this, what are we even testing? What are we achieving? </p>

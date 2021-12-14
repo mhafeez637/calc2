@@ -22,7 +22,8 @@
             and looks for code smells. It can also look for certain type errors, it can recommend suggestions
             about how particular blocks can be refactored and can offer you details about the code's complexity.
         </p>
-        <img width=500 height=250 src="images/pylint_error2.jpg" alt="index"/>
+        <img src="{{ url_for('static', filename='images/pylint_error2.jpg') }}" width="500" height="250"/>
+
         <p> Pylint has a lot of useful errors and warnings. but also a whole lot of highly opinionated
             assumptions about how our code should look. And fundamentally it treats both opinions and objective
             problems the same way. There’s a distinction between warnings and errors, but both useful and
@@ -66,15 +67,17 @@
             <Li>At this point Pylint will do no checks. Next:</Li>
             <li>Uncomment a small batch of checks, and run pylint.</li>
         </ol>
-        <img width=500 height=250 src="images/pylint_error.jpg" alt="index"/>
+        <img src="{{ url_for('static', filename='images/pylint_error.jpg') }}" width="500" height="250"/>
+
         <p> If the resulting errors are real problems, fix them. If the errors are utter garbage, delete those
             checks from the configuration. </p>
         <p> After fixing first error message</p>
-        <img width=500 height=250 src="images/pylint_error1.jpg" alt="index"/>
+        <img src="{{ url_for('static', filename='images/pylint_error1.jpg') }}" width="500" height="250"/>
+
         <p> We do see another error message "Final newline missing (missing-final-newline)". This error message
             clearly pointing that we have a missing line at the end. Let correct this and see how pylint results
             us back.</p>
-        <img width=500 height=250 src="images/pylint100per.jpg" alt="index"/>
+        <img src="{{ url_for('static', filename='images/pylint100per.jpg') }}" width="500" height="250"/>
         <p> Above example clearly showed us that Pylint has a lot of useful errors and warnings. but also a
             whole lot of highly opinionated assumptions about how your code should look. </p>
         <p></p>
